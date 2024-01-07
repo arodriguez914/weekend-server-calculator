@@ -14,8 +14,26 @@ let calculations = []
 
 // GET /calculations
 
+app.get('/calculator', function (req, res) {
+  res.send(calculations);
+});
+
 // POST /calculations
 
+app.post('/calculator', (req, res) => {
+  const newCalculation = req.body;
+  
+  if (newCalculation.numOne == null || newCalculation.numTwo == null|| 
+    newCalculation.operator == null|| newCalculation.result == null) {
+    res.sendStatus(400);
+    return;
+  };
+
+  //add number to list
+  calculations.push(newCalculation);
+
+  res.sendStatus(201);
+});
 
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
 // 🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸  🐻  🐻‍❄️  🧸
