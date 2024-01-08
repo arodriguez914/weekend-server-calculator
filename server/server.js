@@ -15,6 +15,7 @@ let calculations = []
 // GET /calculations
 
 app.get('/calculations', function (req, res) {
+  console.log("Calculating");
   res.send(calculations);
 });
 
@@ -29,8 +30,25 @@ app.post('/calculations', (req, res) => {
     return;
   };
 
+  let solveCalc = {
+    numOne: newCalculation.numOne,
+    numTwo: newCalculation.numTwo,
+    operator: newCalculation.operator,
+  }
+
+  if (solveCalc.operator == '+'){
+    solveCalc.result = newCalculation.numOne + newCalculation.numTwo;
+  } else if (solveCalc.operator == '-'){
+    solveCalc.result = newCalculation.numOne - newCalculation.numTwo;
+  } else if (solveCalc.operator == '*'){
+    solveCalc.result = newCalculation.numOne * newCalculation.numTwo;
+  } else {
+    solveCalc.result = newCalculation.numOne / newCalculation.numTwo;
+  }
+
+
   //add number to list
-  calculations.push(newCalculation);
+  calculations.push(solveCalc);
 
   res.sendStatus(201);
 });

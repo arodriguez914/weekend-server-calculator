@@ -12,13 +12,13 @@
 
     <form data-testid="calculator">
       <input id="numOne" placeholder="First Number" type="number" maxlength="2" required>
-      <button class="operator" type="button" value="+">+</button>
-      <button class="operator" type="button" value="-">-</button>
-      <button class="operator" type="button" value="*">*</button>
-      <button class="operator" type="button" value="/">/</button>
+      <button class="operator" id="add" type="button" value="+">+</button>
+      <button class="operator" id="subtract" type="button" value="-">-</button>
+      <button class="operator" id="multiply" type="button" value="*">*</button>
+      <button class="operator" id="divide" type="button" value="/">/</button>
       <input id="numTwo" placeholder="Second Number" type="number" maxlength="2" required>
-      <button type="submit">=</button>
-      <button>C</button>
+      <button onclick="handleClick(event)" type="submit">=</button>
+      <button id="clear" type="button">C</button>
     </form>
 
     <section id="recentResult" data-testid="recentResult">
