@@ -11,21 +11,21 @@
     <h1>Server-Side Calculator</h1>
 
     <form data-testid="calculator">
-      <input placeholder="First Number">
-      <button>+</button>
-      <button>-</button>
-      <button>*</button>
-      <button>/</button>
-      <input placeholder="Second Number">
-      <button>=</button>
+      <input id="numOne" placeholder="First Number" type="number" maxlength="2" required>
+      <button class="operator" type="button" value="+">+</button>
+      <button class="operator" type="button" value="-">-</button>
+      <button class="operator" type="button" value="*">*</button>
+      <button class="operator" type="button" value="/">/</button>
+      <input id="numTwo" placeholder="Second Number" type="number" maxlength="2" required>
+      <button type="submit">=</button>
       <button>C</button>
     </form>
 
-    <section data-testid="recentResult">
+    <section id="recentResult" data-testid="recentResult">
       <!-- The most recent calculation result goes here. -->
     </section>
 
-    <section data-testid="resultHistory">
+    <section id="resultHistory" data-testid="resultHistory">
       <!-- The list of calculation results goes here. -->
     </section>
   </body>

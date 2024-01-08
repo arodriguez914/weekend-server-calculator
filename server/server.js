@@ -14,13 +14,13 @@ let calculations = []
 
 // GET /calculations
 
-app.get('/calculator', function (req, res) {
+app.get('/calculations', function (req, res) {
   res.send(calculations);
 });
 
 // POST /calculations
 
-app.post('/calculator', (req, res) => {
+app.post('/calculations', (req, res) => {
   const newCalculation = req.body;
   
   if (newCalculation.numOne == null || newCalculation.numTwo == null|| 
