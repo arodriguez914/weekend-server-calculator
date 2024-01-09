@@ -46,9 +46,6 @@ function submitNumbers(event) {
     data: newCalculation,
   })
     .then((response) => {
-      numOneElement.value = '';
-      numTwoElement.value = '';
-
       const calculationListElement = document.querySelector('#resultHistory');
       calculationListElement.innerHTML = '';
 

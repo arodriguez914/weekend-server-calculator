@@ -25,7 +25,7 @@ app.post('/calculations', (req, res) => {
   const newCalculation = req.body;
   
   if (newCalculation.numOne == null || newCalculation.numTwo == null|| 
-    newCalculation.operator == null|| newCalculation.result == null) {
+    newCalculation.operator == null) {
     res.sendStatus(400);
     return;
   };
@@ -34,13 +34,14 @@ app.post('/calculations', (req, res) => {
     numOne: newCalculation.numOne,
     numTwo: newCalculation.numTwo,
     operator: newCalculation.operator,
+    
   }
 
-  if (solveCalc.operator == '+'){
+  if (solveCalc.operator == "+"){
     solveCalc.result = newCalculation.numOne + newCalculation.numTwo;
-  } else if (solveCalc.operator == '-'){
+  } else if (solveCalc.operator == "-"){
     solveCalc.result = newCalculation.numOne - newCalculation.numTwo;
-  } else if (solveCalc.operator == '*'){
+  } else if (solveCalc.operator == "*"){
     solveCalc.result = newCalculation.numOne * newCalculation.numTwo;
   } else {
     solveCalc.result = newCalculation.numOne / newCalculation.numTwo;
